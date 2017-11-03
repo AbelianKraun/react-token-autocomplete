@@ -1,12 +1,7 @@
 import React from 'react';
-import radium from 'radium';
 import styles from './styles';
 import {noop, identity} from 'lodash';
-import {decorators} from 'peters-toolbelt';
-const {StyleDefaults} = decorators;
 
-@radium
-@StyleDefaults(styles)
 export default class Option extends React.Component {
 
   static displayName = 'Option';
@@ -24,7 +19,8 @@ export default class Option extends React.Component {
     handleClick: noop,
     selected: false,
     index: 0,
-    parse: identity
+    parse: identity,
+    style: styles
   }
 
   onMouseEnter = () => {

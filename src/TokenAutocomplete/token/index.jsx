@@ -1,12 +1,7 @@
 import React from 'react';
-import radium from 'radium';
 import styles from './styles';
 import {identity, noop} from 'lodash';
-import {decorators} from 'peters-toolbelt';
-const {StyleDefaults} = decorators;
 
-@radium
-@StyleDefaults(styles)
 export default class Token extends React.Component {
 
   static displayName = 'Token';
@@ -21,7 +16,8 @@ export default class Token extends React.Component {
     handleRemove: noop,
     parse: identity,
     index: 0,
-    fullWidth: false
+    fullWidth: false,
+    style: styles
   }
 
   state = {
