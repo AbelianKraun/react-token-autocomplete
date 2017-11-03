@@ -8,7 +8,6 @@ import Immutable from 'immutable';
 import keyCodes from 'utils/keyCodes';
 import styles from './styles';
 
-
 export default class TokenAutocomplete extends React.Component {
 
   static displayName = 'TokenAutocomplete';
