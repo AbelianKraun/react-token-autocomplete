@@ -6,6 +6,7 @@ import {contains} from 'underscore.string';
 import Immutable from 'immutable';
 import keyCodes from 'utils/keyCodes';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 function defaultValuesPropType(props, propName, component) {
   const prop = props[propName];
@@ -16,7 +17,7 @@ function defaultValuesPropType(props, propName, component) {
       );
   }
 
-  return React.PropTypes.array(props, propName, component);
+  return PropTypes.array(props, propName, component);
 }
 
 function tresholdPropType(props, propName, component) {
@@ -28,7 +29,7 @@ function tresholdPropType(props, propName, component) {
       );
   }
 
-  return React.PropTypes.number(props, propName, component);
+  return PropTypes.number(props, propName, component);
 }
 
 export default class TokenAutocomplete extends React.Component {
@@ -37,23 +38,23 @@ export default class TokenAutocomplete extends React.Component {
 
   static propTypes = {
     //initial state
-    options: React.PropTypes.array,
-    placeholder: React.PropTypes.string,
+    options: PropTypes.array,
+    placeholder: PropTypes.string,
     treshold: tresholdPropType,
     defaultValues: defaultValuesPropType,
-    processing: React.PropTypes.bool,
-    focus: React.PropTypes.bool,
+    processing: PropTypes.bool,
+    focus: PropTypes.bool,
     //behaviour
-    filterOptions: React.PropTypes.bool,
-    simulateSelect: React.PropTypes.bool,
-    limitToOptions: React.PropTypes.bool,
-    parseOption: React.PropTypes.func,
-    parseToken: React.PropTypes.func,
-    parseCustom: React.PropTypes.func,
+    filterOptions: PropTypes.bool,
+    simulateSelect: PropTypes.bool,
+    limitToOptions: PropTypes.bool,
+    parseOption: PropTypes.func,
+    parseToken: PropTypes.func,
+    parseCustom: PropTypes.func,
     //handles
-    onInputChange: React.PropTypes.func,
-    onAdd: React.PropTypes.func,
-    onRemove: React.PropTypes.func
+    onInputChange: PropTypes.func,
+    onAdd: PropTypes.func,
+    onRemove: PropTypes.func
   }
 
   static contextTypes = {

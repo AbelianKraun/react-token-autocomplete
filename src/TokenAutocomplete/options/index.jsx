@@ -3,15 +3,16 @@ import styles from './styles';
 import {noop, map} from 'lodash';
 import keyCodes from 'utils/keyCodes';
 import Option from './option';
+import PropTypes from 'prop-types';
 
 export default class OptionList extends React.Component {
 
   static displayName = 'Option List';
 
   static propTypes = {
-    options: React.PropTypes.array,
-    alreadySelected: React.PropTypes.array,
-    term: React.PropTypes.string
+    options: PropTypes.array,
+    alreadySelected: PropTypes.array,
+    term: PropTypes.string
   }
 
   static defaultProps = {

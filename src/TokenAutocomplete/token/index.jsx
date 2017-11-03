@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './styles';
 import {identity, noop} from 'lodash';
+import PropTypes from 'prop-types';
 
 export default class Token extends React.Component {
 
   static displayName = 'Token';
 
   static propTypes = {
-    handleRemove: React.PropTypes.func,
-    index: React.PropTypes.number,
-    parse: React.PropTypes.func
+    handleRemove: PropTypes.func,
+    index: PropTypes.number,
+    parse: PropTypes.func
   }
 
   static defaultProps = {

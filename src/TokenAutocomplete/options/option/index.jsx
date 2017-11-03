@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './styles';
 import {noop, identity} from 'lodash';
+import PropTypes from 'prop-types';
 
 export default class Option extends React.Component {
 
   static displayName = 'Option';
 
   static propTypes = {
-    selected: React.PropTypes.bool,
-    index: React.PropTypes.number,
-    handleSelect: React.PropTypes.func,
-    handleClick: React.PropTypes.func,
-    parse: React.PropTypes.func
+    selected: PropTypes.bool,
+    index: PropTypes.number,
+    handleSelect: PropTypes.func,
+    handleClick: PropTypes.func,
+    parse: PropTypes.func
   }
 
   static defaultProps = {
