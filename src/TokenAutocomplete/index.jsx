@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import OptionList from './options';
 import Token from './token';
 import {include, difference, filter, noop, identity, isArray, isUndefined, isEmpty} from 'lodash';
@@ -6,36 +7,13 @@ import {contains} from 'underscore.string';
 import Immutable from 'immutable';
 import keyCodes from 'utils/keyCodes';
 import styles from './styles';
-import PropTypes from 'prop-types';
 
-function defaultValuesPropType(props, propName, component) {
-  const prop = props[propName];
-
-  if (props.simulateSelect && isArray(prop) && prop.length > 1) {
-      return new Error(
-        'when props.simulateSelect is set to TRUE, you should pass more than a single value in props.defaultValues'
-      );
-  }
-
-  return PropTypes.array(props, propName, component);
-}
-
-function tresholdPropType(props, propName, component) {
-  const prop = props[propName];
-
-  if (props.simulateSelect && prop > 0) {
-      return new Error(
-        'when props.simulateSelect is set to TRUE, you should not pass non-zero treshold'
-      );
-  }
-
-  return PropTypes.number(props, propName, component);
-}
 
 export default class TokenAutocomplete extends React.Component {
 
   static displayName = 'TokenAutocomplete';
 
+  /*
   static propTypes = {
     //initial state
     options: PropTypes.array,
@@ -56,6 +34,7 @@ export default class TokenAutocomplete extends React.Component {
     onAdd: PropTypes.func,
     onRemove: PropTypes.func
   }
+  */
 
   static contextTypes = {
   }
@@ -160,7 +139,7 @@ export default class TokenAutocomplete extends React.Component {
   }
 
   handleClick = e => {
-    const clickedOutside = !React.findDOMNode(this).contains(e.target);
+    const clickedOutside = !ReactDOM.findDOMNode(this).contains(e.target);
 
      if (clickedOutside && this.state.focused) {
         this.blur();
@@ -175,7 +154,7 @@ export default class TokenAutocomplete extends React.Component {
 
   focus = () => {
     if (this.refs.input) {
-      React.findDOMNode(this.refs.input).focus();
+      ReactDOM.findDOMNode(this.refs.input).focus();
     }
     this.bindListeners();
     this.setState({focused: true});
@@ -183,7 +162,7 @@ export default class TokenAutocomplete extends React.Component {
 
   blur = () => {
     if (this.refs.input) {
-      React.findDOMNode(this.refs.input).blur();
+      ReactDOM.findDOMNode(this.refs.input).blur();
     }
 
     this.unbindListeners();
