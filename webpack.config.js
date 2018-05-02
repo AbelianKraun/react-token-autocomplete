@@ -23,7 +23,6 @@ var conf = new webpackConf({
   .iNeedReact()
   .iNeedWebFonts()
   .iNeedSCSS()
-  .iNeedHotDevServer()
   .getConfig();
 
 /*RegExp.prototype.toJSON = RegExp.prototype.toString;
